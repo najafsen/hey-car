@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { mdMinWidth } from "../constants/styles";
 
 const mainBackground = "#F7F7F7";
 const contentBackground = "#FFFFFF";
@@ -12,11 +13,11 @@ const Main = styled.main`
 
 const MainContent = styled.div`
   width: 100%;
+  padding: 8px 16px;
   background-color: ${contentBackground};
 
-  @media (min-width: 768px) {
+  @media (min-width: ${mdMinWidth}) {
     width: 768px;
-    padding: 8px 16px;
   }
 `;
 

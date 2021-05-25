@@ -1,5 +1,5 @@
 import { FunctionComponent } from "react";
 
-export const New: FunctionComponent<{}> = () => {
+export const QuestionNew: FunctionComponent<{}> = () => {
   return <h1>New</h1>;
 };

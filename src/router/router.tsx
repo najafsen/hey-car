@@ -1,20 +1,12 @@
-import { Switch, Route } from "react-router-dom";
-import { Details } from "../pages/details";
-import { Home } from "../pages/home";
-import { New } from "../pages/new";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { QuestionsRouter } from "../views/questions/questions.router";
 
 export const Router = () => (
   <Switch>
     <Route exact path="/">
-      <Home />
+      <Redirect to="/questions" />
     </Route>
 
-    <Route exact path="/details">
-      <Details />
-    </Route>
-
-    <Route exact path="/new">
-      <New />
-    </Route>
+    <QuestionsRouter />
   </Switch>
 );
