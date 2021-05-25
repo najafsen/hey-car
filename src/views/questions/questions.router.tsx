@@ -3,12 +3,12 @@ import { QuestionDetails } from "./views/details/questionDetails";
 import { QuestionsList } from "./views/list/questionsList";
 import { QuestionNew } from "./views/new/questionNew";
 
-const basePath = "questions";
+export const questionsPageBasePath = "questions";
 
 export const QuestionsRouter = () => (
   <Switch>
-    <Route exact path={`/${basePath}`} component={QuestionsList} />
-    <Route path={`/${basePath}/new`} component={QuestionNew} />
-    <Route path={`/${basePath}/details/:id`} component={QuestionDetails} />
+    <Route exact path={`/${questionsPageBasePath}`} component={QuestionsList} />
+    <Route path={`/${questionsPageBasePath}/new`} component={QuestionNew} />
+    <Route path={`/${questionsPageBasePath}/:id`} component={QuestionDetails} />
   </Switch>
 );

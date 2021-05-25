@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { PropsWithChildren } from "../../types/global";
 
-const CardHeader = styled.h6`
+const CardHeader = styled.h4`
   color: #777777;
+  margin-bottom: 12px;
 `;
 
-const CardContent = styled.h6`
+const CardContent = styled.section`
   color: #c2c2c2;
 `;
 
