@@ -2,13 +2,13 @@ import { FunctionComponent } from "react";
 import styled from "styled-components";
 import { PageContent } from "../../../../components/pageContent/pageContent";
 import { PageHeader } from "../../../../components/pageHeader/pageHeader";
-import { mdMinWidth } from "../../../../constants/styles";
+import { mdMediaQuery } from "../../../../constants/styles";
 import { QuestionCard } from "../../components/card/questionCard";
 
 const List = styled.div`
   display: grid;
 
-  @media (min-width: ${mdMinWidth}) {
+  ${mdMediaQuery} {
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }

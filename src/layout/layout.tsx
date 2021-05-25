@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { mdMinWidth } from "../constants/styles";
+import { mdMediaQuery } from "../constants/styles";
 
 const mainBackground = "#F7F7F7";
 const contentBackground = "#FFFFFF";
@@ -16,7 +16,7 @@ const MainContent = styled.div`
   padding: 8px 16px;
   background-color: ${contentBackground};
 
-  @media (min-width: ${mdMinWidth}) {
+  ${mdMediaQuery} {
     width: 768px;
   }
 `;
