@@ -11,6 +11,10 @@ const Table = styled.div.attrs({
   border: 1px solid #e4e4e4;
 `;
 
+interface RowProps {
+  columnCount: number;
+}
+
 const Row = styled.div.attrs({
   role: "row",
 })`
@@ -27,6 +31,8 @@ const Row = styled.div.attrs({
 
   ${mdMediaQuery} {
     grid-auto-flow: column;
+    grid-template-columns: ${(p: RowProps) =>
+      `repeat(${p.columnCount}, ${100 / p.columnCount}%)`};
   }
 `;
 
@@ -61,7 +67,7 @@ export const DataGrid = <TItem extends unknown>({
 }: DataGridProps<TItem>) => (
   <Table>
     {items.map((item) => (
-      <Row>
+      <Row columnCount={columns.length}>
         {columns.map((column) => (
           <Cell>{item[column] as any}</Cell>
         ))}
