@@ -1,9 +1,12 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
 import styled from "styled-components";
 import { PageContent } from "../../../../components/pageContent/pageContent";
 import { PageHeader } from "../../../../components/pageHeader/pageHeader";
 import { mdMediaQuery } from "../../../../constants/styles";
+import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { QuestionCard } from "../../components/card/questionCard";
+import { getQuestionsListAction } from "../../questions.actions";
+import { selectQuestionsList } from "../../questions.selectors";
 
 const List = styled.div`
   display: grid;
@@ -14,108 +17,31 @@ const List = styled.div`
   }
 `;
 
+const getIdFromUrl = (url: string): string =>
+  url.substring(url.lastIndexOf("/") + 1);
+
 export const QuestionsList: FunctionComponent<{}> = () => {
+  const questionsList = useAppSelector(selectQuestionsList);
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(getQuestionsListAction());
+  }, [dispatch]);
+
   return (
     <>
       <PageHeader>Questions</PageHeader>
       <PageContent>
         <List>
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
-          <QuestionCard
-            id="5"
-            title="Sample question"
-            published="23-12-2020 12:45"
-            choicesCount={5}
-          />
+          {questionsList.map((question) => (
+            <QuestionCard
+              key={question.url}
+              id={getIdFromUrl(question.url)}
+              title={question.question}
+              published={question.published_at}
+              choicesCount={question.choices.length}
+            />
+          ))}
         </List>
       </PageContent>
     </>

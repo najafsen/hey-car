@@ -1,3 +1,7 @@
 import { combineReducers } from "redux";
 
-export const appReducer = () => combineReducers({});
+import { questionsReducer as questions } from "./views/questions/questions.reducers";
+
+export const appReducer = combineReducers({
+  questions,
+});
