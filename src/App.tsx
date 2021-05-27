@@ -1,4 +1,3 @@
-import "./App.css";
 import { Layout } from "./layout/layout";
 import { Router } from "./router/router";
 
