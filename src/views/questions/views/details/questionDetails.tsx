@@ -1,6 +1,7 @@
 import { ReactChild, useEffect, useState } from "react";
 import { RouteComponentProps } from "react-router";
 import { DataGrid } from "../../../../components/dataGrid/dataGrid";
+import { NetworkRequestFailed } from "../../../../components/networkRequestFailed/networkRequestFailed";
 import { PageActions } from "../../../../components/pageActions/pageActions";
 import { PageContent } from "../../../../components/pageContent/pageContent";
 import { PageHeader } from "../../../../components/pageHeader/pageHeader";
@@ -10,7 +11,10 @@ import {
   getQuestionByIdAction,
   voteQuestionChoiceAction,
 } from "../../questions.actions";
-import { selectQuestionById } from "../../questions.selectors";
+import {
+  selectQuestionById,
+  selectQuestionsIsNetworkRequestFailed,
+} from "../../questions.selectors";
 import { QuestionChoice } from "../../questions.types";
 
 const extractIdsFromChoiceUrl = (
@@ -39,6 +43,9 @@ export const QuestionDetails = ({ match }: QuestionDetailsProps) => {
   const question = useAppSelector((state) =>
     selectQuestionById(state, match.params.id)
   );
+  const isNetworkRequestFailed = useAppSelector(
+    selectQuestionsIsNetworkRequestFailed
+  );
 
   useEffect(() => {
     if (!question) {
@@ -46,7 +53,11 @@ export const QuestionDetails = ({ match }: QuestionDetailsProps) => {
     }
   }, [dispatch, match.params.id, question]);
 
-  if (!question) {
+  if (isNetworkRequestFailed) {
+    return <NetworkRequestFailed />;
+  }
+
+  if (!question /** Or if loading */) {
     // TODO: handle no item found and/or loading state
     return null;
   }

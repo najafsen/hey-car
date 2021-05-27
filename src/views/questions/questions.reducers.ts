@@ -8,10 +8,12 @@ import { Question } from "./questions.types";
 
 export interface QuestionsState {
   list: Question[];
+  isNetworkRequestFailed: boolean;
 }
 
 const initialState: QuestionsState = {
   list: [],
+  isNetworkRequestFailed: false,
 };
 
 export const questionsReducer = createReducer(initialState, (builder) => {
@@ -58,7 +60,7 @@ export const questionsReducer = createReducer(initialState, (builder) => {
       voteQuestionChoiceAction.rejected
     ),
     (state, action) => {
-      // do some error handling!
+      state.isNetworkRequestFailed = true;
     }
   );
 });

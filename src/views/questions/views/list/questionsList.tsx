@@ -1,12 +1,16 @@
 import { FunctionComponent, useEffect } from "react";
 import styled from "styled-components";
+import { NetworkRequestFailed } from "../../../../components/networkRequestFailed/networkRequestFailed";
 import { PageContent } from "../../../../components/pageContent/pageContent";
 import { PageHeader } from "../../../../components/pageHeader/pageHeader";
 import { mdMediaQuery } from "../../../../constants/styles";
 import { useAppDispatch, useAppSelector } from "../../../../hooks/redux";
 import { QuestionCard } from "../../components/card/questionCard";
 import { getQuestionsListAction } from "../../questions.actions";
-import { selectQuestionsList } from "../../questions.selectors";
+import {
+  selectQuestionsIsNetworkRequestFailed,
+  selectQuestionsList,
+} from "../../questions.selectors";
 
 const List = styled.div`
   display: grid;
@@ -22,11 +26,18 @@ const getIdFromUrl = (url: string): string =>
 
 export const QuestionsList: FunctionComponent<{}> = () => {
   const questionsList = useAppSelector(selectQuestionsList);
+  const isNetworkRequestFailed = useAppSelector(
+    selectQuestionsIsNetworkRequestFailed
+  );
   const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(getQuestionsListAction());
   }, [dispatch]);
+
+  if (isNetworkRequestFailed) {
+    return <NetworkRequestFailed />;
+  }
 
   return (
     <>

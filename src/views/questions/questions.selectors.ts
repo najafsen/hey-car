@@ -12,3 +12,6 @@ export const selectQuestionById = createSelector(
   (questions, questionId) =>
     questions.find((question) => question.url === `/questions/${questionId}`)
 );
+
+export const selectQuestionsIsNetworkRequestFailed = (state: RootState) =>
+  selectQuestions(state).isNetworkRequestFailed;
