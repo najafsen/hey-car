@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/najafsen/hey-car/compare/v1.0.0...v1.1.0) (2021-05-27)
+
+
+### Features
+
+* **questions:** handle network fail state ([1a34092](https://github.com/najafsen/hey-car/commit/1a3409227e324c8fbd9e7787b4e7d755110e8f2e))
+
 # 1.0.0 (2021-05-27)
 
 
