@@ -11,7 +11,7 @@ Simply clone the project and install dependencies using `yarn`.
 - **Running the app locally:** Use `yarn start` to run the application
 - **Running Tests:** Use `yarn test`
 - **Building the app:** Use `yarn build` command to build the app into `build` folder
-- **Commits:** Use [Conventional commits](https://www.conventionalcommits.org/) for you commit messages. Both your commits and pull-requests' titles should follow conventional commit messages rules. There are status checks on PRs to verify commit message and PR title. We can configure github to prevent merging PRs not passing conventional messages checks. These commits are currently used to create Github releases and update the changelog (See `CHANGELOG.md, and github releases).
+- **Commits:** Use [Conventional commits](https://www.conventionalcommits.org/) for you commit messages. Both your commits and pull-requests' titles should follow conventional commit messages rules. There are status checks on PRs to verify commit message and PR title. We can configure github to prevent merging PRs not passing conventional messages checks. These commits are currently used to create Github releases and update the changelog (See `CHANGELOG.md`, and github releases).
 - **Deploy**: The app will be deployed once you merge a PR to master branch. All commits currently trigger deploy, but it can be configured to only deploy on particular commit types. (Another benefit of conventional commit messages.)
 
 ## Packages and tools
