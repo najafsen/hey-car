@@ -11,7 +11,7 @@ export interface QuestionsState {
   isNetworkRequestFailed: boolean;
 }
 
-const initialState: QuestionsState = {
+export const initialState: QuestionsState = {
   list: [],
   isNetworkRequestFailed: false,
 };

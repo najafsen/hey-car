@@ -66,10 +66,10 @@ export const DataGrid = <TItem extends unknown>({
   items,
 }: DataGridProps<TItem>) => (
   <Table>
-    {items.map((item) => (
-      <Row columnCount={columns.length}>
+    {items.map((item, index) => (
+      <Row key={index} columnCount={columns.length}>
         {columns.map((column) => (
-          <Cell>{item[column] as any}</Cell>
+          <Cell key={column.toString()}>{item[column] as any}</Cell>
         ))}
       </Row>
     ))}

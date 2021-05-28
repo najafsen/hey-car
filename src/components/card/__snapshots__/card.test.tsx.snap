@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card should render correctly 1`] = `
+<DocumentFragment>
+  <article>
+    <h4
+      class="sc-bdnxRM IvBzo"
+    >
+      test
+    </h4>
+    <section
+      class="sc-gtsrHT gmVwmo"
+    >
+      Content
+    </section>
+  </article>
+</DocumentFragment>
+`;
