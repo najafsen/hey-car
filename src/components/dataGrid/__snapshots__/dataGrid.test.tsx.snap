@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DataGrid should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="sc-bdnxRM fPfiLM"
+    role="table"
+  >
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name1
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id1
+      </div>
+    </div>
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name2
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id2
+      </div>
+    </div>
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name3
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id3
+      </div>
+    </div>
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name4
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id4
+      </div>
+    </div>
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name5
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id5
+      </div>
+    </div>
+    <div
+      class="sc-gtsrHT Emqft"
+      role="row"
+    >
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        name6
+      </div>
+      <div
+        class="sc-dlnjwi cJyYRj"
+        role="cell"
+      >
+        id6
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

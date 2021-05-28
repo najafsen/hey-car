@@ -17,7 +17,7 @@ import {
 } from "../../questions.selectors";
 import { QuestionChoice } from "../../questions.types";
 
-const extractIdsFromChoiceUrl = (
+export const extractIdsFromChoiceUrl = (
   url: string | null
 ): { questionId: string; choiceId: string } => {
   const slashIds = url?.match(/\/\d+/g);
@@ -73,6 +73,7 @@ export const QuestionDetails = ({ match }: QuestionDetailsProps) => {
       <PageContent>
         {/*  TODO Create a typography for H2 */}
         <h2>Question: {question.question}</h2>
+
         {/** This is not the best way of using a Grid, but considering time I had to do it this way */}
         <DataGrid<ChoiceDataGridItem>
           columns={["choice", "votes", "percentage", "select"]}
@@ -86,7 +87,7 @@ export const QuestionDetails = ({ match }: QuestionDetailsProps) => {
                 <input
                   type="radio"
                   checked={selectedChoice === choice.url}
-                  onClick={() => setSelectedChoice(choice.url)}
+                  onChange={() => setSelectedChoice(choice.url)}
                 />
                 Vote
               </label>
@@ -97,6 +98,9 @@ export const QuestionDetails = ({ match }: QuestionDetailsProps) => {
 
       <PageActions>
         <button
+          type="submit"
+          aria-label="Submit your vote!"
+          disabled={!selectedChoice}
           onClick={() =>
             dispatch(
               voteQuestionChoiceAction(extractIdsFromChoiceUrl(selectedChoice))
