@@ -7,6 +7,10 @@ This is a sample app to works with polls. To access hosted version of the app [C
 - "Details page" does not 100% match the design, because when I was developing that page, the url for designs was returning "504" error.
 - As unfortunately, I'm very busy these days (also missed the weekend because of vacation) I couldn't add good amount of tests, but tried to add different types of them to showcase how I write tests.
 
+## Folder structure
+
+The folder structure is recursive. All domb/reusable components go into `components` folder, and all routed components go under `views` folder. Other folders are straightforward. The same structure can appear under each folder. For example we have `components` folder under `views/questions`, which contains dumb/reusable components that are only needed in `questions` domain. There can be `utils`, `types`, etc. under `views/questions` as well.
+
 ## Contribution
 
 - **Running the app locally:** Use `yarn start` to run the application
