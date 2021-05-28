@@ -1,17 +1,18 @@
 # Polls!
 
-This is a sample app to works with polls. To access hosted version of the app [Click here!](https://hey-car.netlify.app/)
+This is a sample app to works with polls. To access hosted version of the app [Click here!](https://hey-car.netlify.app/). Resize the browser window, or open/install the app on your phone to see how it looks on the phone.
 
-## Installation
+## Notes
 
-Simply clone the project and install dependencies using `yarn`.
+- "Details page" does not 100% match the design, because when I was developing that page, the url for designs was returning "504" error.
+- As unfortunately, I'm very busy these days (also missed the weekend because of vacation) I couldn't add good amount of tests, but tried to add different types of them to showcase how I write tests.
 
 ## Contribution
 
 - **Running the app locally:** Use `yarn start` to run the application
 - **Running Tests:** Use `yarn test`. Unfortunately, the test coverage is not decent. However, I tried to add at least one test to different types of files or components. So, you get the idea of how I write tests.
-- **Building the app:** Use `yarn build` command to build the app into `build` folder
-- **Commits:** Use [Conventional commits](https://www.conventionalcommits.org/) for you commit messages. Both your commits and pull-requests' titles should follow conventional commit messages rules. There are status checks on PRs to verify commit message and PR title. We can configure github to prevent merging PRs not passing conventional messages checks. These commits are currently used to create Github releases and update the changelog (See `CHANGELOG.md`, and github releases).
+- **Building the app:** Use `yarn build` command to build the app into `build` folder. Perhaps you won't need to run this locally.
+- **Commits:** Use [Conventional commits](https://www.conventionalcommits.org/) for you commit messages. Both your commits and pull-requests' titles should follow conventional commit messages rules. There are status checks on PRs to verify commit message and PR title, so that if you haven't used proper commit/pr message, you won't be able to merge your PR. These commits are currently used to create Github releases and update the changelog (See `CHANGELOG.md`, and github releases).
 - **Deploy**: The app will be deployed once you merge a PR to master branch. All commits currently trigger deploy, but it can be configured to only deploy on particular commit types. (Another benefit of conventional commit messages.)
 
 ## Packages and tools
