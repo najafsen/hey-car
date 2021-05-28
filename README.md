@@ -9,7 +9,7 @@ This is a sample app to works with polls. To access hosted version of the app [C
 
 ## Folder structure
 
-The folder structure is recursive. All domb/reusable components go into `components` folder, and all routed components go under `views` folder. Other folders are straightforward. The same structure can appear under each folder. For example we have `components` folder under `views/questions`, which contains dumb/reusable components that are only needed in `questions` domain. There can be `utils`, `types`, etc. under `views/questions` as well.
+The folder structure is recursive. All dumb/reusable components go into `components` folder, and all routed components go under `views` folder. Other folders are straightforward. The same structure can appear under each folder. For example we have `components` folder under `views/questions`, which contains dumb/reusable components that are only needed in `questions` domain. There can be `utils`, `types`, etc. under `views/questions` as well.
 
 ## Contribution
 
